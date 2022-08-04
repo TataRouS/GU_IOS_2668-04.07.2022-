@@ -1,0 +1,22 @@
+import Foundation
+//1. Написать функцию, которая определяет четность и нечетность числа.
+//2. Написать функцию, которая определяет, делится ли число без остатка на 3.
+//3. Создать возрастающий массив из 100 чисел.
+//4. Удалить из этого массива все четные числа и все числа, которые не делятся на 3.
+
+func isEven(value: Int) -> Bool {
+    return value % 2 == 0
+}
+
+func isDividedByThree(value: Int) -> Bool {
+    return value % 3 == 0
+}
+
+var array = Array(stride (from: 0, to: 100, by: 1))
+
+for element in array {
+    if isEven(value: element) || !isDividedByThree(value: element) {
+        let index = array.firstIndex(of: element)!
+        array.remove(at: index)
+    }
+}
